@@ -24,7 +24,7 @@ button {
 }
 
 .btn {
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   color: #fff;
   text-align: center;
@@ -60,17 +60,36 @@ button {
   width: 100%;
 }
 
+.br-20 {
+  border-radius: 20px;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+
 .btn-primary {
   background-color: var(--green);
   border-color: var(--green);
 }
 
-.btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-color: rgba(0, 0, 0, 0.8);
+.btn-primary:hover {
+  background-color: #16312b;
+  border-color: #16312b;
 }
 
-.btn-check:focus + .btn-primary, .btn-primary:focus, .btn-primary:hover {
-  background-color: #16312b;
-  border-color: #152e28;
+.btn-clear {
+  color: #1e3e36;
+}
+
+.btn-clear:hover {
+  background-color: #f6f4f1;
+  border-color: #f6f4f1;
+}
+
+hr {
+  background: #dedcd9;
+  height: 2px;
+  border: none;
+  width: 98%;
 }
