@@ -1,0 +1,33 @@
+{
+	"id": 90,
+	"listing": {
+		"id": 61,
+		"model": {
+			"id": 12,
+			"name": "Nautilus",
+			"displayName": "Nautilus",
+			"brand": {
+				"id": 2,
+				"name": "Patek Philippe",
+				"displayName": "Patek Philippe"
+			},
+			"referenceNumber": "5712/1A-001",
+			"description": "The classic by Gerald Genta, re-imagined with a combination of 'small' complications. The result is a funky, a-symmetrical dial that's nothing if not appealing to the eye."
+		},
+		"manufactureYear": 1900,
+		"condition": "NEW",
+		"images": [{
+			"type": "FRONT",
+			"image": {
+				"id": 534,
+				"url": "https://getbezel.mo.cloudinary.net/sandbox/1583bb64-0df2-4a69-a10d-119e464ab6fe.png"
+			}
+		}],
+		"created": "2022-02-10T06:11:30.000+00:00",
+		"updated": "2023-04-26T01:43:00.000+00:00"
+	},
+	"salePriceCents": 500000,
+	"commissionRateBips": 850,
+	"sellerFeeCents": 2500,
+	"payoutAmountCents": 455000
+}
