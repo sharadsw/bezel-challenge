@@ -1,0 +1,29 @@
+.watchdetails-view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.watchdetails-view__brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.watchdetails-view__img {
+  width: 100px;
+  height: 100px;
+}
+
+.listing-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f6f4f1;
+  margin: 20px;
+}
+
+.listing-view__entry {
+  display: flex;
+  justify-content: space-between;
+}

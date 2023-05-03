@@ -7,6 +7,12 @@ export type ModalProps = {
 };
 
 export type OrderModalProps = {
+  isOpen: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+}
+
+export type ListingViewProps = {
   model: WatchDetailsProps;
   sellingPrice: number;
   comissionRate: number;
@@ -33,4 +39,4 @@ export type BrandInfo = {
 };
 
 export type WatchDetailsComponent = FunctionComponent<WatchDetailsProps>;
-export type OrderModalComponent = FunctionComponent<OrderModalProps>;
+export type ListingViewComponent = FunctionComponent<ListingViewProps>;
