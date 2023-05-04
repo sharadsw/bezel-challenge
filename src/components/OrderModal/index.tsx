@@ -40,7 +40,7 @@ export const OrderModal = ({
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="flex w-full justify-between p-12 max-w-4xl transform overflow-hidden rounded-2xl bg-beige p-6 text-left align-middle">
-                  <div className="flex flex-col justify-between px-12 pt-12 py-8">
+                  <div className="flex flex-col max-w-md justify-between px-12 pt-8 pb-4">
                     <div>
                       <Dialog.Title className="font-semibold text-sm text-gray uppercase">
                         Congrats!
@@ -49,8 +49,8 @@ export const OrderModal = ({
                         Your watch sold!
                       </Dialog.Description>
 
-                      <p className="text-gray-green">
-                        You have 1 business day to accept the sale. <br />
+                      <p className="text-gray-green text-sm">
+                        You have 1 business day to accept the sale.
                         If you do not accept, it will be automatically rejected.
                       </p>
                     </div>
