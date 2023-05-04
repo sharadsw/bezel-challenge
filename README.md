@@ -2,6 +2,8 @@
 
 This is my submission for the Bezel Programming Challenge. The code uses `React`, `Tailwind` and `Headless UI` (also by Tailwind) to create the order action modal.
 
+**Deployed on:** https://bezel-challenge-production.up.railway.app/
+
 ## Dependencies
 * `react`
 * `tailwindcss`
