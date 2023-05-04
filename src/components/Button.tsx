@@ -22,18 +22,32 @@ transition-colors
 ease-in-out 
 delay-15`;
 
-export const ButtonPrimary:FunctionComponent<ButtonProps> = ({ className, title, onClick }) => {
+export const ButtonPrimary: FunctionComponent<ButtonProps> = ({
+  className,
+  title,
+  onClick,
+}) => {
   return (
-    <button className={`bg-green-600 hover:bg-green-700 text-white ${DEFAULT_CLASSES} ${className}`} onClick={onClick}>
+    <button
+      className={`bg-green-600 hover:bg-green-700 text-white ${DEFAULT_CLASSES} ${className}`}
+      onClick={onClick}
+    >
       {title}
     </button>
   );
 };
 
-export const ButtonClear:FunctionComponent<ButtonProps> = ({ className, title, onClick }) => {
-    return (
-      <button className={`bg-transparent hover:bg-beige-200 text-green-500 ${DEFAULT_CLASSES} ${className}`} onClick={onClick}>
-        {title}
-      </button>
-    );
-  };
+export const ButtonClear: FunctionComponent<ButtonProps> = ({
+  className,
+  title,
+  onClick,
+}) => {
+  return (
+    <button
+      className={`bg-transparent hover:bg-beige-200 text-green-500 ${DEFAULT_CLASSES} ${className}`}
+      onClick={onClick}
+    >
+      {title}
+    </button>
+  );
+};

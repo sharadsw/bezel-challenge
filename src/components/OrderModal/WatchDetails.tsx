@@ -13,10 +13,13 @@ export const WatchDetails: WatchDetailsComponent = ({
       <div className="flex flex-col justify-between items-start">
         <div className="flex flex-col text-green-400 font-medium">
           <span>{brand.displayName}</span>
-          <span>{displayName} {referenceNumber}</span>
+          <span>
+            {displayName} {referenceNumber}
+          </span>
         </div>
         <span>
-          <span className="capitalize">{condition.toLowerCase()}</span> / {manufactureYear}
+          <span className="capitalize">{condition.toLowerCase()}</span> /{" "}
+          {manufactureYear}
         </span>
       </div>
       <img className="w-24 h-24 rounded-3xl" src={imageUrl} />

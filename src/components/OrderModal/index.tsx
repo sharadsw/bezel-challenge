@@ -51,8 +51,8 @@ export const OrderModal = ({
                       </Dialog.Description>
 
                       <p className="text-gray-green text-sm">
-                        You have 1 business day to accept the sale.
-                        If you do not accept, it will be automatically rejected.
+                        You have 1 business day to accept the sale. If you do
+                        not accept, it will be automatically rejected.
                       </p>
                     </div>
 

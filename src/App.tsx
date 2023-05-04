@@ -65,11 +65,7 @@ function App() {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-beige">
-      <ButtonPrimary
-        className="w-96"
-        onClick={openModal}
-        title="View Order"
-      />
+      <ButtonPrimary className="w-96" onClick={openModal} title="View Order" />
       <OrderModal
         isOpen={modalIsOpen}
         closeModal={closeModal}
