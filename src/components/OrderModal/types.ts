@@ -2,8 +2,9 @@ import { FunctionComponent } from "react";
 
 export type OrderModalProps = {
   isOpen: boolean;
-  openModal: () => void;
   closeModal: () => void;
+  handleAccept: () => void;
+  handleReject: () => void;
   data: ListingViewProps | null;
 }
 

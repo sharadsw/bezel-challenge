@@ -11,7 +11,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://eb863a74-7a4e-4daf-9540-d2db8470c18e.mock.pstmn.io/marketplace/orders/123");
+        const response = await axios.get(
+          "https://eb863a74-7a4e-4daf-9540-d2db8470c18e.mock.pstmn.io/marketplace/orders/123"
+        );
         const data = response.data;
         const listingObj = {
           model: data["listing"]["model"],
@@ -21,11 +23,11 @@ function App() {
           comissionRate: data["commissionRateBips"] / 100,
           sellerFee: data["sellerFeeCents"] / 100,
           earnings: data["payoutAmountCents"] / 100,
-          imageUrl: data["listing"]["images"][0]["image"]["url"]
+          imageUrl: data["listing"]["images"][0]["image"]["url"],
         };
         setData(listingObj);
       } catch (error) {
-        console.log(error);
+        console.log("Failed to fetch data", error);
       }
     };
     fetchData();
@@ -39,15 +41,40 @@ function App() {
     setIsOpen(false);
   };
 
+  const handleAccept = async () => {
+    try {
+      const res = await axios.post(
+        "https://eb863a74-7a4e-4daf-9540-d2db8470c18e.mock.pstmn.io/marketplace/orders/123/accept"
+      );
+      if (res.status === 200) closeModal();
+    } catch (error) {
+      console.log("Error in accepting", error);
+    }
+  };
+
+  const handleReject = async () => {
+    try {
+      const res = await axios.post(
+        "https://eb863a74-7a4e-4daf-9540-d2db8470c18e.mock.pstmn.io/marketplace/orders/123/decline"
+      );
+      if (res.status === 200) closeModal();
+    } catch (error) {
+      console.log("Error in declining", error);
+    }
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-beige">
-        <button
-          className="btn btn-primary w-25"
-          onClick={() => setIsOpen(true)}
-        >
-          View Order
-        </button>
-        <OrderModal isOpen={modalIsOpen} openModal={openModal} closeModal={closeModal} data={data} />
+      <button className="btn btn-primary w-25" onClick={openModal}>
+        View Order
+      </button>
+      <OrderModal
+        isOpen={modalIsOpen}
+        closeModal={closeModal}
+        handleAccept={handleAccept}
+        handleReject={handleReject}
+        data={data}
+      />
     </div>
   );
 }
