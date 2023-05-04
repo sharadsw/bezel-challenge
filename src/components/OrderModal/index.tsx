@@ -2,6 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { OrderModalProps } from "./types";
 import { ListingView } from "./ListingView";
 import { Fragment } from "react";
+import { ButtonClear, ButtonPrimary } from "../Button";
 
 export const OrderModal = ({
   isOpen,
@@ -39,7 +40,7 @@ export const OrderModal = ({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="flex w-full justify-between p-12 max-w-4xl transform overflow-hidden rounded-2xl bg-beige p-6 text-left align-middle">
+                <Dialog.Panel className="flex w-full justify-between p-12 max-w-4xl transform overflow-hidden rounded-3xl bg-beige p-6 text-left align-middle">
                   <div className="flex flex-col max-w-md justify-between px-12 pt-8 pb-4">
                     <div>
                       <Dialog.Title className="font-semibold text-sm text-gray uppercase">
@@ -56,18 +57,15 @@ export const OrderModal = ({
                     </div>
 
                     <div className="flex flex-col">
-                      <button
-                        className="btn btn-primary"
+                      <ButtonPrimary
                         onClick={handleAccept}
-                      >
-                        Accept sale
-                      </button>
-                      <button
-                        className="btn btn-clear my-2"
+                        title="Accept sale"
+                      />
+                      <ButtonClear
+                        className="my-2"
                         onClick={handleReject}
-                      >
-                        Reject sale
-                      </button>
+                        title="Reject sale"
+                      />
                     </div>
                   </div>
                   <ListingView {...data} />

@@ -9,8 +9,8 @@ export const WatchDetails: WatchDetailsComponent = ({
   imageUrl,
 }) => {
   return (
-    <div className="watchdetails-view py-4">
-      <div className="watchdetails-view__brand flex justify-between">
+    <div className="flex justify-between py-4">
+      <div className="flex flex-col justify-between items-start">
         <div className="flex flex-col text-green-400 font-medium">
           <span>{brand.displayName}</span>
           <span>{displayName} {referenceNumber}</span>
@@ -19,7 +19,7 @@ export const WatchDetails: WatchDetailsComponent = ({
           <span className="capitalize">{condition.toLowerCase()}</span> / {manufactureYear}
         </span>
       </div>
-      <img className="watchdetails-view__img rounded-2xl" src={imageUrl} />
+      <img className="w-24 h-24 rounded-3xl" src={imageUrl} />
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import "./App.css";
 import { useEffect, useState } from "react";
 import { OrderModal } from "./components/OrderModal";
 import axios from "axios";
 import { ListingViewProps } from "./components/OrderModal/types";
+import { ButtonPrimary } from "./components/Button";
 
 function App() {
   const [data, setData] = useState<ListingViewProps | null>(null);
@@ -65,9 +65,11 @@ function App() {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-beige">
-      <button className="btn btn-primary w-25" onClick={openModal}>
-        View Order
-      </button>
+      <ButtonPrimary
+        className="w-96"
+        onClick={openModal}
+        title="View Order"
+      />
       <OrderModal
         isOpen={modalIsOpen}
         closeModal={closeModal}
