@@ -6,7 +6,7 @@ export type OrderModalProps = {
   handleAccept: () => void;
   handleReject: () => void;
   data: ListingViewProps | null;
-}
+};
 
 export type ListingViewProps = {
   model: WatchDetailsProps;

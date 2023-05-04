@@ -22,7 +22,7 @@ export const WatchDetails: WatchDetailsComponent = ({
           {manufactureYear}
         </span>
       </div>
-      <img className="w-24 h-24 rounded-3xl" src={imageUrl} />
+      <img className="w-24 h-24 rounded-3xl" src={imageUrl} alt={brand.displayName} />
     </div>
   );
 };
