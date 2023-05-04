@@ -1,12 +1,9 @@
 import { WatchDetailsComponent } from "./types";
 
 export const WatchDetails: WatchDetailsComponent = ({
-  id,
-  name,
   displayName,
   brand,
   referenceNumber,
-  description,
   manufactureYear,
   condition,
   imageUrl,
@@ -16,10 +13,10 @@ export const WatchDetails: WatchDetailsComponent = ({
       <div className="watchdetails-view__brand flex justify-between">
         <div className="flex flex-col text-green-400 font-medium">
           <span>{brand.displayName}</span>
-          <span>{displayName}</span>
+          <span>{displayName} {referenceNumber}</span>
         </div>
         <span>
-          {condition} / {manufactureYear}
+          <span className="capitalize">{condition.toLowerCase()}</span> / {manufactureYear}
         </span>
       </div>
       <img className="watchdetails-view__img rounded-2xl" src={imageUrl} />

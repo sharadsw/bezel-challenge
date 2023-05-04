@@ -1,15 +1,10 @@
 import { FunctionComponent } from "react";
 
-export type ModalProps = {
-  isOpen: boolean;
-  openModal: () => void;
-  closeModal: () => void;
-};
-
 export type OrderModalProps = {
   isOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
+  data: ListingViewProps | null;
 }
 
 export type ListingViewProps = {
@@ -18,6 +13,9 @@ export type ListingViewProps = {
   comissionRate: number;
   sellerFee: number;
   earnings: number;
+  manufactureYear: number;
+  condition: string;
+  imageUrl: string;
 };
 
 export type WatchDetailsProps = {

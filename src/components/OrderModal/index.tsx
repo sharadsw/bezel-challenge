@@ -6,7 +6,10 @@ export const OrderModal = ({
   isOpen,
   openModal,
   closeModal,
+  data,
 }: OrderModalProps) => {
+  if (!data) return null;
+
   return (
     <Dialog open={isOpen} onClose={closeModal} className="relative z-50">
       <div className="fixed inset-0 bg-black/70" aria-hidden="true" />
@@ -14,9 +17,11 @@ export const OrderModal = ({
       <div className="fixed inset-0 overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-2 text-center">
           <Dialog.Panel className="flex w-full justify-between p-12 max-w-4xl transform overflow-hidden rounded-2xl bg-beige p-6 text-left align-middle">
-            <div className="flex flex-col mx-8 justify-between py-8">
+            <div className="flex flex-col justify-between px-12 pt-12 py-8">
               <div>
-                <Dialog.Title className="font-semibold text-sm text-gray uppercase">Congrats!</Dialog.Title>
+                <Dialog.Title className="font-semibold text-sm text-gray uppercase">
+                  Congrats!
+                </Dialog.Title>
                 <Dialog.Description className="mb-4 font-medium text-green-300 text-3xl">
                   Your watch sold!
                 </Dialog.Description>
@@ -36,7 +41,7 @@ export const OrderModal = ({
                 </button>
               </div>
             </div>
-            <ListingView />
+            <ListingView {...data} />
           </Dialog.Panel>
         </div>
       </div>

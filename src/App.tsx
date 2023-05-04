@@ -2,16 +2,28 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { OrderModal } from "./components/OrderModal";
 import axios from "axios";
+import { ListingViewProps } from "./components/OrderModal/types";
 
 function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<ListingViewProps | null>(null);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://eb863a74-7a4e-4daf-9540-d2db8470c18e.mock.pstmn.io/marketplace/orders/123");
-        setData(response.data);
+        const data = response.data;
+        const listingObj = {
+          model: data["listing"]["model"],
+          manufactureYear: data["listing"]["manufactureYear"],
+          condition: data["listing"]["condition"],
+          sellingPrice: data["salePriceCents"] / 100,
+          comissionRate: data["commissionRateBips"] / 100,
+          sellerFee: data["sellerFeeCents"] / 100,
+          earnings: data["payoutAmountCents"] / 100,
+          imageUrl: data["listing"]["images"][0]["image"]["url"]
+        };
+        setData(listingObj);
       } catch (error) {
         console.log(error);
       }
@@ -35,7 +47,7 @@ function App() {
         >
           View Order
         </button>
-        <OrderModal isOpen={modalIsOpen} openModal={openModal} closeModal={closeModal} />
+        <OrderModal isOpen={modalIsOpen} openModal={openModal} closeModal={closeModal} data={data} />
     </div>
   );
 }
